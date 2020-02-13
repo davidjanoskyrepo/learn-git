@@ -52,6 +52,17 @@ public class Engine {
   // TODO: Complete this method
   // Player is either 0 or 1, row and column are valid and empty
   public void playerTurn(int player, int row, int col) {
+    if(player != 1 && player != 0) {
+     throw new IllegalArguementException("Player not listed");
+	}
+    if(row > BOARD_SIZE || row < BOARD_SIZE) {
+     throw new IllegalArguementException("Row index out of bounds");
+	}
+    if(col > BOARD_SIZE || col < BOARD_SIZE) {
+     throw new IllegalArguementException("Col index out of bounds");
+	}
+
+    board[row][col] = player;
     return;
   }
 
